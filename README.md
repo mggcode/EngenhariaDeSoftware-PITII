@@ -6,7 +6,7 @@
 
 <br>
 
-<img src="https://github.com/MGBrave/Espaco_Elis/blob/main/prototype.jpg?raw=true" alt="Espaço Elis" width="600"  />
+<img src="" alt="PITII" width="600"  />
 
 [DEMO](https://enchantecupcakes.netlify.app/)
 
