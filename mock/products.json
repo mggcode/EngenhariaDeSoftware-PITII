@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Rainbow Cupcake",
+        "price": 8.5,
+        "img": "cupcake1.png"
+    },
+    {
+        "id": 2,
+        "name": "Sunshine Lemon",
+        "price": 7.75,
+        "img": "cupcake2.png"
+    },
+    {
+        "id": 3,
+        "name": "Choconuts Bliss",
+        "price": 12.25,
+        "img": "cupcake3.png"
+    },
+    {
+        "id": 4,
+        "name": "Delícia Morango Supremo",
+        "price":14.99,
+        "img": "cupcake4.png"
+    },
+    {
+        "id": 5,
+        "name": "Chocolate Mint Bliss",
+        "price": 13.99,
+        "img": "cupcake5.png"
+    },
+    {
+        "id": 6,
+        "name": "Blueberry Dream Delight",
+        "price": 12.99,
+        "img": "cupcake6.png"
+    },
+    {
+        "id": 7,
+        "name": "Ébano e Marfim",
+        "price": 14.95,
+        "img": "cupcake7.png"
+    },
+    {
+        "id": 8,
+        "name": "Pineapple Paradise",
+        "price": 6.90,
+        "img": "cupcake8.png"
+    },
+    {
+        "id": 9,
+        "name": "Chocoberry Star",
+        "price": 10.00,
+        "img": "cupcake9.png"
+    },
+    {
+        "id": 10,
+        "name": "Sol Tropical de Manga",
+        "price": 7.75,
+        "img": "cupcake10.png"
+    },
+    {
+        "id": 11,
+        "name": "Rubro Delícia de Baunilha",
+        "price": 11.99,
+        "img": "cupcake11.png"
+    },
+    {
+        "id": 12,
+        "name": "Sunshine Lemon",
+        "price": 9.99,
+        "img": "cupcake12.png"
+    }
+]
