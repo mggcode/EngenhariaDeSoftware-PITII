@@ -6,7 +6,7 @@
 
 <br>
 
-<img src="" alt="PITII" width="600"  />
+<img src="https://github.com/mggcode/EngenhariaDeSoftware-PITII/blob/main/prototipe.png?raw=true" alt="PITII" width="400" height="" />
 
 [DEMO](https://enchantecupcakes.netlify.app/)
 
