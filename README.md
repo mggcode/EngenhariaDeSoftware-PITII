@@ -1,4 +1,4 @@
-# Projeto Transdisciplinar em Engenharia de Software II _ PITII
+# Projeto Transdisciplinar em Engenharia de Software II _ PITII - 2024
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="50" height="50"/>  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="50" height="50"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="js" width="50" height="40" /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg" alt="json" width="50" height="40" />
           
 <br>
