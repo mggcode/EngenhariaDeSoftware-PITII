@@ -5,7 +5,7 @@ class Conta {
 
         for (let i = 1; i < id; i++) {
             const { e: emailSis, s: senhaSis } = JSON.parse(localStorage.getItem(`conta${i}`))
-            // console.log ( email , emailSis)
+
 
             if (email === emailSis && senha === senhaSis) {
                 this.approved(email)
@@ -17,7 +17,7 @@ class Conta {
             }
         }
     }
-    // Sistema de verificação com Alert personalizado
+
     approved(email) {
         Swal.fire({
             position: 'top-end',
@@ -44,7 +44,7 @@ class Conta {
             text: 'senha e/ou usuarios incorreto(s)',
             confirmButtonColor: "#DD6B55"
 
-            // footer: '<a href="">Why do I have this issue?</a>'
+        
         })
     }
 }
@@ -54,7 +54,7 @@ document.querySelector('#login-btn').addEventListener('click', () => {
     conta.verify()
 })
 
-//funcoes
+
 
 const getData = () => [document.querySelector('#email').value,
 document.querySelector('#senha').value
