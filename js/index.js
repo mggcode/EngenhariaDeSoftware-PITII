@@ -1,11 +1,11 @@
-/************* NAVIGATION BAR **************/
+
 window.addEventListener("scroll", function () {
 
   var header = document.querySelector("nav");
   header.classList.toggle("menu-scroll", window.scrollY > 0)
 })
 
-// CARROSSEL PRODUTOS EM DESTAQUES
+
 $('.carrossel').slick({
   prevArrow: '.slick-prev-one',
   nextArrow: '.slick-next-one',
@@ -59,24 +59,22 @@ $('.carrossel').slick({
 
 
 
-/* OPEN PAGE LOGIN REGISTER */
+
 
 $('button').on('click', function () {
-  $('#divId').show(); // aparece o div
-  // window.open(seulink, '_blank'); // abre nova janela, esta dando erro
-
+  $('#divId').show(); 
 });
 
-/*SISTEMA LIGHT AND DARK */
+
 const chageThemeBtn = document.querySelector("#chenge-theme");
 
 
-//Toggle dark mode
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark")
 }
 
-// Load light or dark mode . preferencia do usuario
+
 function loadTheme() {
   const darkMode = localStorage.getItem("dark");
 
@@ -89,7 +87,7 @@ loadTheme()
 
 chageThemeBtn.addEventListener("change", function () {
   toggleDarkMode()
-  //Save or remove dark mode
+
   localStorage.removeItem("dark");
 
   if (document.body.classList.contains("dark")) {
@@ -98,7 +96,7 @@ chageThemeBtn.addEventListener("change", function () {
 
 });
 
-// ABRIR MODAL CONFIGURATIONS
+
 function Mudarestado(el) {
   let display = document.getElementById(el).style.display;
   if (display == "none")
@@ -108,10 +106,10 @@ function Mudarestado(el) {
 }
 feather.replace();
 
-//ABRINDO O MENU DO CARRINHO
+
 function scrollCart() {
 
-  // Abrir o menu do carrinho
+
   let cartItem = document.querySelector('.cardCarrinho-container');
   document.querySelector('#cart-btn').onclick = () => {
     cartItem.classList.toggle('active');
@@ -124,7 +122,7 @@ function scrollCart() {
 }
 scrollCart()
 
-//SISTEMA DE USUARIO LOGADO, DEPOIS QUE CRIAR A CONTA
+
 function loggedinuser() {
   window.addEventListener('load', () => {
     let email = localStorage.getItem('userLogado')
@@ -144,7 +142,7 @@ const sair = () => {
   window.location.href = ''
 }
 
-// SE O USUARIO TIVER LOGADO, MOSTRE O INPUT DE SAIR , PARA PODER SAIR DA CONTA.
+
 
 $(document).ready(() => {
   let texto = localStorage.getItem('userLogado') ? "<li onclick='sair()'><p> sair </p></li>" : ''
