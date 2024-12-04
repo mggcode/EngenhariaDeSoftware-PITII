@@ -1,5 +1,5 @@
 
-//objeto literal dos produtos que o site possui
+
 const products = {
   0: {
     nome: 'Rainbow Cupcake',
@@ -142,10 +142,7 @@ class Product {
       img,
       qtd
     } = products[id]
-    //
-
-    //pega os valores individuais do objeto selecionado com base no id e coloca no objeto que vai ser gerado 
-    //posteriormente na funcao que é acionada ao clicar nos botes de compra
+  
 
     this.nome = nome
     this.desc = desc
@@ -156,9 +153,9 @@ class Product {
 }
 
 
-///////////////////////////////////////////////////////CLIQUE///////////////////////////////////////////////////////////
+//*****************************************CLIQUE*****************************************************/
 
-//ao clicar em um dos botoes de compra, gera uma funcao
+
 document.querySelector('body').addEventListener('click', ({
   target: {
     dataset: {
@@ -167,7 +164,7 @@ document.querySelector('body').addEventListener('click', ({
   }
 }) => {
   if ((id >= 0) &&
-    (id <= 100) && //Adicionando Quantidade de Produtos Que o site pode ter
+    (id <= 100) && 
     (id != '')) {
 
     if (localStorage.getItem('userLogado')) {
@@ -176,13 +173,13 @@ document.querySelector('body').addEventListener('click', ({
 
       const produto = new Product(id)
 
-      let cart = {} //cria o carrinho
+      let cart = {}
       if (Object.entries(JSON.parse(localStorage.getItem(`conta${idUserLogado}`))['cart']).length === 0) {
-        cart[id] = produto // se o carrinho for nulo, ele gera um carrinho novo
+        cart[id] = produto 
 
       } else {
         cart = JSON.parse(localStorage.getItem(`conta${idUserLogado}`)).cart // caso nao for, ele pega o carrinho ja gerado, 
-        // e so atribui o produto clicado
+       
 
         let possui = false 
 
@@ -192,7 +189,7 @@ document.querySelector('body').addEventListener('click', ({
           }
         })
 
-        if (!possui) { // se o produto ja tiver no carrinho, ele n vai adicionar, e me mostre um alert- Personalizado
+        if (!possui) { 
           cart[id] = produto
         } else {
           Swal.fire({
@@ -205,9 +202,9 @@ document.querySelector('body').addEventListener('click', ({
 
       }
 
-      reajustarObjeto(cart) // salva o produto cart no localstorage 'cart'
+      reajustarObjeto(cart)
 
-      setarValores(idUserLogado) // seta os valores
+      setarValores(idUserLogado)
     } else {
       window.location.href = 'login-page.html'
     }
@@ -222,9 +219,9 @@ document.querySelector('body').addEventListener('click', ({
 
 
 
-////////////////////////////////////////////////////////FUNCOES//////////////////////////////////////////////////////////
+/***************************************FUNCOES***************************************/
 
-// formata o valor para R$
+
 const formatarValorRS = (valor) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -232,12 +229,12 @@ const formatarValorRS = (valor) => {
   }).format((valor).toFixed(2))
 }
 
-// seta o texto do carrinho, com base no parametro passado na funcao
+
 const setText = texto => {
   document.querySelector('.cart-item').innerHTML = texto
 }
 
-// pega o texto, com base no objeto, e passa para um variavel para depois usa-la no setText()
+
 const getText = (id, {
   nome,
   desc,
@@ -277,7 +274,7 @@ const getText = (id, {
   return texto
 }
 
-// seta o total no carrinho
+
 const setTotal = (total) => document.querySelector('.total').innerHTML = total * 0.9 > 0
   ?
   `
@@ -288,16 +285,16 @@ const setTotal = (total) => document.querySelector('.total').innerHTML = total *
   <h2>Subtotal: NENHUM ITEM ESCOLHIDO </h2>
 `
 
-// pega o valor e a quantidade, com base no objeto passado e multiplica eles entri si
+
 const getTotal = ({ valor, qtd }) => valor * qtd
 
-//ele seta no documento, o numero de produtos no carrinho
+
 const setNumeroProdutos = numero => document.querySelector('#cont-itens-carrinho').innerHTML = numero > 0 ? numero : ''
 
-//ele retorna o valor de produtos no carrinho com base no objeto passado como parametro
+
 const getNumeroProdutos = obj => Object.keys(obj).length
 
-// ele seta os valores no documento, usando todas as outras funcoes acima
+
 const setarValores = (id) => {
   let idUserLogado = getIdUser()
   const cart = JSON.parse(localStorage.getItem(`conta${idUserLogado}`)).cart
@@ -311,7 +308,6 @@ const setarValores = (id) => {
   Object.entries(cart).forEach(el => total += getTotal(el[1]))
 
 
-
   let numero_de_produtos = getNumeroProdutos(cart)
 
   setTotal(total)
@@ -320,16 +316,13 @@ const setarValores = (id) => {
 }
 
 
-// na funcao getText() ele coloca um onclick nos botoes de remover e adicionar qtd do produto, e aqui, 
-// ele opera essas funcoes de remover() e adicionar()
 
-//remover qtd do produto selecionado
 const removerQtd = (id, qtd) => {
   let idUserLogado = getIdUser()
   let cart = JSON.parse(localStorage.getItem(`conta${idUserLogado}`)).cart
 
-  if (qtd === 1) {  //se a qtd do produto selecionad com base no id for 1, ele removera do objeto carrinho, 
-    delete cart[id]  //o produto em questao, e tambem removera do html
+  if (qtd === 1) {  
+    delete cart[id]  
     document.querySelector(`.div${id}`).remove()
     reajustarObjeto(cart)
 
@@ -340,15 +333,15 @@ const removerQtd = (id, qtd) => {
 
     reajustarObjeto(cart)
   }
-  setarValores(idUserLogado) // seta os valores atualizados
+  setarValores(idUserLogado)
 }
 
-//adicionar qtd do produto selecionado, se atingir maior que 20 - Mostre-me um alert personalizado
+
 const adicionarQtd = (id, qtd) => {
   let idUserLogado = getIdUser()
   let cart = JSON.parse(localStorage.getItem(`conta${idUserLogado}`)).cart
 
-  if (qtd <= 19) { // ele trava e deixa adicionar qtd se o numero for 20, ate 19 ele deixa add mais 1, por isso 20
+  if (qtd <= 19) {
     qtd++
 
     cart[id].qtd = qtd
@@ -371,18 +364,16 @@ const adicionarQtd = (id, qtd) => {
     })
   }
 
-  setarValores(idUserLogado) // seta os valores atualizados
+  setarValores(idUserLogado) 
 }
 
 
 
-// carregamento da pagina //
 
-//ao carregar na janela, ele seta os valores 
 document.body.onload = () => {
   let idUserLogado = getIdUser()
   if (localStorage.getItem(`conta${idUserLogado}`) && Object.entries(JSON.parse(localStorage.getItem(`conta${idUserLogado}`)).cart).length != 0) { // ele apenas seta os valores, se o obj cart no localstorage n for nulo
-    // assim, evitando algum erro
+
     setarValores(idUserLogado)
   }
 }
@@ -402,7 +393,7 @@ const reajustarObjeto = (cart) => {
   localStorage.setItem(`conta${idUserLogado}`, JSON.stringify({ e, s, cart }))
 }
 
-// Sistema de compras em Desenvolvimento, Com alert Personalizado
+
 const btnFinalizarCompras = document.querySelector("#btnFinalizarCarrinho")
 btnFinalizarCompras.addEventListener("click", function () {
   Swal.fire({
