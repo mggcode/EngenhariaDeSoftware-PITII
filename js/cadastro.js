@@ -65,7 +65,7 @@ class Bd {
 
         for (let i = 1; i < id; i++) {
             let emailSis = JSON.parse(localStorage.getItem(`conta${i}`)).e
-            // console.log(email, emailSis)
+        
             if (email === emailSis) {
                 return false
             }
@@ -81,7 +81,7 @@ document.querySelector('#register-btn').addEventListener('click', () => {
         if (bd.verifyAccounts(conta)) {
             bd.save(conta)
             limparInputs(3)
-            // Alert Personalizado
+         
             Swal.fire({
                 icon: 'success',
                 title: 'conta criada, vá para a aba de login para logar-se',
@@ -105,7 +105,6 @@ document.querySelector('#register-btn').addEventListener('click', () => {
                 text: 'ja existe uma conta com esse email',
                 confirmButtonColor: "#DD6B55"
 
-                // footer: '<a href="">Why do I have this issue?</a>'
             })
         }
 
@@ -116,7 +115,7 @@ document.querySelector('#register-btn').addEventListener('click', () => {
             text: 'A senha deve possuir no minimo 6 caracteres e as senhas devem ser iguais',
             confirmButtonColor: "#DD6B55"
 
-            // footer: '<a href="">Why do I have this issue?</a>'
+        
         })
         limparInputs(2)
     }
@@ -132,7 +131,7 @@ if (document.getElementById('modal_desc_button')) {
 
 
 
-//funcoes
+
 
 const getData = () => [document.getElementById('email').value,
 document.getElementById('senha').value,
